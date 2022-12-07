@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 
-type Props = {};
-
 interface dataListItem {
   name: string;
   price: number;
 }
 
-export default function List({}: Props) {
+export default function List() {
   const data: dataListItem[] = [
     { name: "Item A", price: 125 },
     { name: "Item B", price: 230 },
@@ -25,7 +23,7 @@ export default function List({}: Props) {
   const onClickButton = (
     ev: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void => {
-    const d = data.sort((a, b): any => a.price - b.price);
+    const d = data.sort((a, b): number => a.price - b.price);
     setSortData(d);
     setShowHide(!showHide);
   };
